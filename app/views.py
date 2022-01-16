@@ -23,3 +23,12 @@ def view(request, pk):
     data = {}
     data['db'] = Carros.objects.get(pk=pk)
     return render(request, 'view.html', data)
+
+def edit(request, pk):
+    data = {}
+    data['db'] = Carros.objects.get(pk=pk)
+    data['form'] = CarrosForm(instance=data['db'])
+    return render(request, 'form.html', data)
+
+def update(request, pk):
+    return render(request, 'index.html')
