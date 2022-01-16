@@ -6,6 +6,6 @@ def home(request):
     return render(request, 'index.html')
 
 def form(request):
-    data  = {}
+    data = {}
     data['form'] = CarrosForm()
-    return render(request, 'form.html')
+    return render(request, 'form.html', data)
