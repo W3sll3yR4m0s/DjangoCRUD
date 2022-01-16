@@ -22,15 +22,23 @@
                 <th scope="col">Modelo</th>
                 <th scope="col">Marca</th>
                 <th scope="col">Ano</th>
+                <th scope="col">Ações</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>S-10</td>
-                <td>Chevrolet</td>
-                <td>2010</td>
-              </tr>
+              {% for dbs in db %}
+                <tr>
+                  <th>{{dbs.id}}</th>
+                  <td>{{dbs.Modelo}}</td>
+                  <td>{{dbs.Marca}}</td>
+                  <td>{{dbs.Ano}}</td>
+                  <td>
+                    <a href="/view/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
+                    <a href="" class="btn btn-primary">Editar</a>
+                    <a href="" class="btn btn-danger">Deletar</a>
+                  </td>
+                </tr>
+              {% endfor %}
             </tbody>
         </table>
     </div>
