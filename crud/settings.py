@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure-+4l+8f-1vk!ij&ewn*vr&5g0fnt7!ytlls$o66ay*dfmn)9#=#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+TEMPLATE_DEBUG = True
+
 ALLOWED_HOSTS = []
 
 
@@ -120,12 +122,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Django - Diretórios Estáticos
 '''
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 '''
+#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Django - Templates
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'static', 'templates'),)
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
