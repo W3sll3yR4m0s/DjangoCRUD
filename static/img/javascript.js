@@ -16,4 +16,9 @@
         }
 
     }
+
+    // Ajax do form
+    if(doc.querySelector('#form')){
+        let form=doc.querySelector('#form')
+    }
 })(window,document);
