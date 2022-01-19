@@ -8,10 +8,22 @@ def home(request):
     data = {}
     #data['db'] = Carros.objects.all()
     #all = Carros.objects.all() - [ Warning: A paginação pode gerar resultados inconsistentes com uma object_list não ordenada. ]
+    
+    def search():
+        search = request.GET.get('search')
+        if search:
+            data['db'] = Carros.objects.filter(Modelo__icontains=search)
+        else:
+            #data['db'] = Carros.objects.all()
+            data['db'] = Carros.objects.get_queryset().order_by('id')
+    
     all = Carros.objects.get_queryset().order_by('id')
-    paginator = Paginator(all, 2)
+    paginator = Paginator(all, 3)
     pages = request.GET.get('page')
     data['db'] = paginator.get_page(pages)
+    
+    search()
+    
     return render(request, 'index.html', data)
 
 def form(request):
