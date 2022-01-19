@@ -63,7 +63,7 @@ et-xmlfile==1.1.0
 fastcache @ file:///tmp/build/80754af9/fastcache_1607571273717/work
 filelock @ file:///tmp/build/80754af9/filelock_1638521398314/work
 flake8 @ file:///tmp/build/80754af9/flake8_1620776156532/work
-Flask @ file:///home/ktietz/src/ci/flask_1611932660458/work
+Flask
 fonttools==4.25.0
 fsspec @ file:///tmp/build/80754af9/fsspec_1636116461911/work
 gevent @ file:///tmp/build/80754af9/gevent_1628273270105/work
