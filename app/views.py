@@ -15,10 +15,11 @@ def home(request):
             data['db'] = Carros.objects.filter(Modelo__icontains=search)
         else:
             #data['db'] = Carros.objects.all()
-            data['db'] = Carros.objects.get_queryset().order_by('id')
+            #data['db'] = Carros.objects.get_queryset().order_by('id')
+            data['db'] = paginator.get_page(pages)
     
     all = Carros.objects.get_queryset().order_by('id')
-    paginator = Paginator(all, 3)
+    paginator = Paginator(all, 4)
     pages = request.GET.get('page')
     data['db'] = paginator.get_page(pages)
     
