@@ -52,8 +52,8 @@
         </table>
     </div>
 
-    <div class="pagination justify-content-center m-auto pt-2 pb-2 text-center">
-      <nav aria-label="Navegação de páginas exemplo">
+    <nav aria-label="Navegação de páginas exemplo">
+      <div class="pagination justify-content-center m-auto pt-2 pb-2 text-center">
         <ul class="pagination pagination-lg justify-content-center">
           {% if db.has_previous %}
             <li class="page-item"><a class="page-link" href="?page={{db.previous_page_number}}">Anterior</a></li>
@@ -67,8 +67,8 @@
             <!--<strong><a href="?page={{db.next_page_number}}"> > </a></strong>-->
           {% endif %}
         </ul>
-      </nav>
-    </div>
+      </div>
+    </nav>
 
     <script src="{% static 'js/javascript.js' %}"></script>
 </body>
